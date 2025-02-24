@@ -179,7 +179,7 @@ To preserve the original order of `jax.debug.print`s as written in your Python f
 
 #### Computation perturbation
 
-Adding `jax.debug.print` or `jax.debug.breakpoint` statements will change the computation that XLA is asked to compile. This can potentially result in numeric discrepancies compared to the same code without debug statements. Keep this in mind when debugging numerical issues, as the act of adding debug statements might affect the behavior you're trying to investigate.
+Adding `jax.debug.print` or `jax.debug.breakpoint` statements will change the computation that XLA is asked to compile. This can potentially result in numeric discrepancies compared to the same code without debug statements because XLA might perform different operation fusions during compilation. Keep this in mind when debugging numerical issues, as the act of adding debug statements might affect the behavior you're trying to investigate.
 
 #### Asynchronous callbacks
 
